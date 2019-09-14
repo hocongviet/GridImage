@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - IBAction
-
+    
     @IBAction func pickAction(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Private functions
-
+    
     private func configureScrollView() {
         backgroundView.layer.addSublayer(gridContainerLayer)
         scrollView.delegate = self
@@ -77,35 +77,32 @@ class ViewController: UIViewController {
         
         let numberOfGrid = 3
         
-        do {
-            
-            let width = gridContainerLayer.bounds.width / CGFloat(numberOfGrid)
-            for i in 1..<numberOfGrid {
-                let x = floor(CGFloat(i) * width)
-                let path = UIBezierPath()
-                path.move(to: CGPoint(x: x, y: 0))
-                path.addLine(to: CGPoint(x: x, y: gridContainerLayer.bounds.height))
-                let lineLayer = CAShapeLayer()
-                lineLayer.path = path.cgPath
-                lineLayer.strokeColor = UIColor(white: 1, alpha: 0.6).cgColor
-                lineLayer.fillColor = UIColor.clear.cgColor
-                gridContainerLayer.addSublayer(lineLayer)
-                gridLayers.append(lineLayer)
-            }
-            
-            let height = gridContainerLayer.bounds.height / CGFloat(numberOfGrid)
-            for i in 1..<numberOfGrid {
-                let y = floor(CGFloat(i) * height)
-                let path = UIBezierPath()
-                path.move(to: CGPoint(x: 0, y: y))
-                path.addLine(to: CGPoint(x: gridContainerLayer.bounds.width, y: y))
-                let lineLayer = CAShapeLayer()
-                lineLayer.path = path.cgPath
-                lineLayer.strokeColor = UIColor(white: 1, alpha: 0.6).cgColor
-                lineLayer.fillColor = UIColor.clear.cgColor
-                gridContainerLayer.addSublayer(lineLayer)
-                gridLayers.append(lineLayer)
-            }
+        let width = gridContainerLayer.bounds.width / CGFloat(numberOfGrid)
+        for i in 1..<numberOfGrid {
+            let x = floor(CGFloat(i) * width)
+            let path = UIBezierPath()
+            path.move(to: CGPoint(x: x, y: 0))
+            path.addLine(to: CGPoint(x: x, y: gridContainerLayer.bounds.height))
+            let lineLayer = CAShapeLayer()
+            lineLayer.path = path.cgPath
+            lineLayer.strokeColor = UIColor(white: 1, alpha: 0.6).cgColor
+            lineLayer.fillColor = UIColor.clear.cgColor
+            gridContainerLayer.addSublayer(lineLayer)
+            gridLayers.append(lineLayer)
+        }
+        
+        let height = gridContainerLayer.bounds.height / CGFloat(numberOfGrid)
+        for i in 1..<numberOfGrid {
+            let y = floor(CGFloat(i) * height)
+            let path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: y))
+            path.addLine(to: CGPoint(x: gridContainerLayer.bounds.width, y: y))
+            let lineLayer = CAShapeLayer()
+            lineLayer.path = path.cgPath
+            lineLayer.strokeColor = UIColor(white: 1, alpha: 0.6).cgColor
+            lineLayer.fillColor = UIColor.clear.cgColor
+            gridContainerLayer.addSublayer(lineLayer)
+            gridLayers.append(lineLayer)
         }
     }
     
