@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Space" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g5-rE-H8d">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SD-0T-51K">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1zV-jP-St2">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1zV-jP-St2" firstAttribute="centerX" secondItem="5SD-0T-51K" secondAttribute="centerX" id="YDL-gI-orb"/>
+                                            <constraint firstItem="1zV-jP-St2" firstAttribute="top" secondItem="5SD-0T-51K" secondAttribute="top" id="btV-bc-7fZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="1zV-jP-St2" secondAttribute="bottom" id="fpW-RJ-bkQ"/>
+                                            <constraint firstItem="1zV-jP-St2" firstAttribute="leading" secondItem="5SD-0T-51K" secondAttribute="leading" id="hdS-p1-FRM"/>
+                                            <constraint firstItem="1zV-jP-St2" firstAttribute="centerY" secondItem="5SD-0T-51K" secondAttribute="centerY" id="oMP-1U-cxz"/>
+                                            <constraint firstAttribute="trailing" secondItem="1zV-jP-St2" secondAttribute="trailing" id="pC3-g2-7aw"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="H4l-gv-TGw"/>
+                                    <constraint firstAttribute="width" secondItem="0g5-rE-H8d" secondAttribute="height" multiplier="1:1" id="T5R-eb-TZ7"/>
+                                    <constraint firstItem="5SD-0T-51K" firstAttribute="leading" secondItem="0g5-rE-H8d" secondAttribute="leading" id="Wr6-4a-aaf"/>
+                                    <constraint firstAttribute="bottom" secondItem="5SD-0T-51K" secondAttribute="bottom" id="Z74-QO-nj2"/>
+                                    <constraint firstItem="5SD-0T-51K" firstAttribute="top" secondItem="0g5-rE-H8d" secondAttribute="top" id="eAx-at-SD3"/>
+                                    <constraint firstAttribute="trailing" secondItem="5SD-0T-51K" secondAttribute="trailing" id="mid-LG-iSl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Js-Bg-IyW">
+                                <rect key="frame" x="170" y="94" width="74" height="30"/>
+                                <state key="normal" title="Pick Photo"/>
+                                <connections>
+                                    <action selector="pickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nc2-Nj-Ifu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhs-14-w1p">
+                                <rect key="frame" x="190" y="134" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEs-c9-GV1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Js-Bg-IyW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="C5f-mD-2UH"/>
+                            <constraint firstItem="dhs-14-w1p" firstAttribute="top" secondItem="6Js-Bg-IyW" secondAttribute="bottom" constant="10" id="ClN-Eh-qrm"/>
+                            <constraint firstItem="0g5-rE-H8d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cpB-3r-y6V"/>
+                            <constraint firstItem="dhs-14-w1p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fhh-hO-umg"/>
+                            <constraint firstItem="0g5-rE-H8d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lI1-gx-CtD"/>
+                            <constraint firstItem="6Js-Bg-IyW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ufv-uG-duY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="0g5-rE-H8d" id="ijC-UL-jDz"/>
+                        <outlet property="imageView" destination="1zV-jP-St2" id="IZq-0y-gOs"/>
+                        <outlet property="pickPhoto" destination="6Js-Bg-IyW" id="dtt-Tl-kNe"/>
+                        <outlet property="savePhoto" destination="dhs-14-w1p" id="FTo-mt-acO"/>
+                        <outlet property="scrollView" destination="5SD-0T-51K" id="M3r-7I-yJd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
